@@ -1,0 +1,11 @@
+<div class="main">
+	<img ng-src="{{randomDogImage}}" class="full-width" />
+
+	<ul>
+		<li ng-repeat="(breed, subbreeds) in breeds">{{breed}}
+			<ul ng-if="subbreeds.length">
+				<li ng-repeat="subbreed in subbreeds">{{subbreed}}</li>
+			</ul>
+		</li>
+	</ul>
+</div>

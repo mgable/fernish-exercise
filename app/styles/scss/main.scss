@@ -1,0 +1,31 @@
+@import "variables.scss";
+
+.testApp { // body class
+	background-color: $white;
+
+	header {
+		margin: 56px 0 0 0;
+
+		.main {
+
+		}
+	}
+
+	.carousel-item {
+	  height: 65vh;
+	  min-height: 300px;
+	  background: no-repeat center center scroll;
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	}
+
+	.slick-prev {
+		left: 0;
+	}
+
+	.slick-next {
+		right: 0;
+	}
+}
