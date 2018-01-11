@@ -20,10 +20,10 @@ angular.module('testApp')
 		$scope.randomDogImages = RandomImages;
 		$scope.breeds = BreedList;
 
-		Search.getRandomImages(3).then(function(response){
-			console.info("the iamges");
-			console.info(response);
-		})
+		// Search.getRandomImages(3).then(function(response){
+		// 	console.info("the iamges");
+		// 	console.info(response);
+		// })
 	}
 
 }]);

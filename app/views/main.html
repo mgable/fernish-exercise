@@ -1,5 +1,5 @@
 <div class="main">
-	<img ng-src="{{randomDogImage}}" class="full-width" />
+	<ng-include src="'views/slick.html'"></ng-include>
 
 	<ul>
 		<li ng-repeat="(breed, subbreeds) in breeds">{{breed}}
