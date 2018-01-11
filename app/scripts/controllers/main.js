@@ -7,29 +7,26 @@
  * # MainCtrl
  * Controller of the testApp
  */
- console.info("loaded main.js");
+
 angular.module('testApp')
-.controller('MainCtrl', ["$scope", "BreedList", "RandomImages", function ($scope, BreedList, RandomImages) {
+.controller('MainCtrl', ["$scope", "$rootScope", "BreedList", function ($scope, $rootScope, BreedList) {
 
-	init();
+	_init();
 
-
-	function init(){
-		console.info("I have inited!");
-		$scope.randomDogImages = RandomImages;
+	function _init(){
+		$scope.displayText = "Random"
 		$scope.alphaBreedsList = _.groupBy(_.map(BreedList, function(val, key){
 			return {name: key, subbreeds: val}
 		}), function(item){
 			return item.name.charAt(0);
-		})
+		});
 
-		// Search.getRandomImages(3).then(function(response){
-		// 	console.info("the iamges");
-		// 	console.info(response);
-		// })
+		$scope.setBreed = function(breed){
+			$rootScope.$broadcast("NEW-BREED", {name: breed});
+			$scope.displayText = breed;
+		}
 
 		console.info($scope.alphaBreedsList);
-		console.info($scope.randomDogImages);
 	}
 
 }]);

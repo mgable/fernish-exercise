@@ -13,7 +13,7 @@
  	'ui.router',
  	'ngSanitize',
  	'ui.bootstrap',
- 	'slick'
+ 	'slickCarousel'
  	])
  .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 

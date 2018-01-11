@@ -24,6 +24,12 @@
  		});
  	}
 
+ 	function getBreedImages(breed){
+ 		return _http(`breed/${breed}/images`, {}).then(function(response){
+ 			return response.message;
+ 		});
+ 	}
+
  	function _http(endpoint, params){
  		return $http.get(domain + endpoint, {params:params}).then(function(response){
  			return response.data
@@ -51,5 +57,6 @@
  	this.getBreeds = getBreeds;
  	this.getRandomImage = getRandomImage;
  	this.getRandomImages = getRandomImages;
+ 	this.getBreedImages = getBreedImages;
 
  }]);

@@ -1,12 +1,13 @@
 <div class="main">
+	<h2>Now showing {{displayText}} breed pictures.</h2>
 	<label for="search">Search breeds:&nbsp;
-		<input id="search" type="text" ng-model="searchTerm" />
+		<input class="search" id="search" type="text" ng-model="searchTerm" />
 	</label>
 
 	<div class="breed-listing">
 		<ul ng-repeat="(alpha, breeds) in alphaBreedsList" class="no-bullets">
 			<li><h2>{{alpha.toUpperCase()}}</h2></li>
-			<li ng-repeat="breed in breeds | filter : searchTerm">{{breed.name}}
+			<li ng-repeat="breed in breeds | filter : searchTerm"><a ng-click="setBreed(breed.name)">{{breed.name}}</a>
 				<ul ng-if="breed.subbreeds.length">
 					<li ng-repeat="subbreed in subbreeds">{{subbreed}}</li>
 				</ul>

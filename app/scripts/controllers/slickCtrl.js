@@ -7,15 +7,40 @@
  * # MainCtrl
  * Controller of the testApp
  */
- console.info("loaded slick.js");
+
 angular.module('testApp')
-.controller('SlickCtrl', ["$scope", "RandomImages", function ($scope, RandomImages) {
+.controller('SlickCtrl', ["$scope", "RandomImages", "Search", function ($scope, RandomImages, Search) {
 
-	init();
+	_init();
 
-	function init(){
-		console.info("I have slick inited!");
+	function _init(){
 		$scope.randomDogImages = RandomImages;
+		$scope.$on("NEW-BREED", _setBreed);
+		$scope.slickConfig = {"infinite":true, "slidesToShow":3, "slidesToScroll":3, "arrows": true, "autoplay": true, "responsive": [{
+			"breakpoint":640,
+			"settings": {
+					"arrows": false,
+					"dots": true,
+					"infinite": true,
+					"slidesToShow": 1,
+					"slidesToScroll": 1,
+					"autoplay": true
+				}
+			}] 
+		};
+		$scope.showSlick = true;
+	}
+
+	function _setBreed(evt, breed){
+		$scope.showSlick = false;
+		var slick = $("slick");
+		slick.slick("unslick");
+		Search.getBreedImages(breed.name).then(function(breedImages){
+			$scope.showSlick = true;
+			breedImages.length = 10;
+			$scope.randomDogImages = breedImages;
+			slick.slick($scope.slickConfig);
+		});
 	}
 
 }]);

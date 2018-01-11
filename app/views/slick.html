@@ -1,5 +1,6 @@
-<div class="slick">
-	<slick infinite=true slides-to-show=3 slides-to-scroll=3 arrows=true autoplay="true">
+<div class="slick" ng-if="showSlick">
+	<img class="spinner" src="images/ajax-loader.gif" />
+	<slick settings="slickConfig">
 		<div ng-repeat="image in randomDogImages" class="carousel-item active" style="background-image: url({{image}})">
 	<!-- 		<div class="carousel-caption d-none d-md-block">
 				<h3>First Slide</h3>
