@@ -1,11 +1,16 @@
 <div class="main">
-	<ng-include src="'views/slick.html'"></ng-include>
+	<label for="search">Search breeds:&nbsp;
+		<input id="search" type="text" ng-model="searchTerm" />
+	</label>
 
-	<ul>
-		<li ng-repeat="(breed, subbreeds) in breeds">{{breed}}
-			<ul ng-if="subbreeds.length">
-				<li ng-repeat="subbreed in subbreeds">{{subbreed}}</li>
-			</ul>
-		</li>
-	</ul>
+	<div class="breed-listing">
+		<ul ng-repeat="(alpha, breeds) in alphaBreedsList" class="no-bullets">
+			<li><h2>{{alpha.toUpperCase()}}</h2></li>
+			<li ng-repeat="breed in breeds | filter : searchTerm">{{breed.name}}
+				<ul ng-if="breed.subbreeds.length">
+					<li ng-repeat="subbreed in subbreeds">{{subbreed}}</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
 </div>

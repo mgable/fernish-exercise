@@ -9,21 +9,27 @@
  */
  console.info("loaded main.js");
 angular.module('testApp')
-.controller('MainCtrl', ["$scope", "Search", "BreedList", "$stateParams", "CONFIG", "RandomImages", function ($scope, Search, BreedList, $stateParams, CONFIG, RandomImages) {
+.controller('MainCtrl', ["$scope", "BreedList", "RandomImages", function ($scope, BreedList, RandomImages) {
 
 	init();
 
-	console.info(BreedList);
 
 	function init(){
 		console.info("I have inited!");
 		$scope.randomDogImages = RandomImages;
-		$scope.breeds = BreedList;
+		$scope.alphaBreedsList = _.groupBy(_.map(BreedList, function(val, key){
+			return {name: key, subbreeds: val}
+		}), function(item){
+			return item.name.charAt(0);
+		})
 
 		// Search.getRandomImages(3).then(function(response){
 		// 	console.info("the iamges");
 		// 	console.info(response);
 		// })
+
+		console.info($scope.alphaBreedsList);
+		console.info($scope.randomDogImages);
 	}
 
 }]);

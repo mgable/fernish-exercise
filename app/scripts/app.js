@@ -22,20 +22,27 @@
  	$stateProvider
  	.state('Home',{
  		url: '/',
- 		templateUrl: 'views/main.html',
- 		controller: 'MainCtrl',
- 		reloadOnSearch: false,
+ 		views: {
+ 			'container': {
+ 				templateUrl: 'views/main.html',
+ 				controller: 'MainCtrl',
+ 			},
+ 			'slick': {
+ 				templateUrl: 'views/slick.html',
+ 				controller: 'SlickCtrl',
+ 			}
+ 		},
  		resolve: {
- 			"RandomImages": function(Search){ return Search.getRandomImages(10);},
- 			"BreedList": function(Search){ return Search.getBreeds();},
- 		}
+			"RandomImages": function(Search){ return Search.getRandomImages(10);},
+			"BreedList": function(Search){ return Search.getBreeds();},
+		}
  	})
- 	.state('Breed', {
- 		url: '/:breed',
- 		templateUrl: 'views/breed.html',
- 		controller: 'BreedCtrl',
- 		reloadOnSearch: false
- 	})
+	 .state('Breed', {
+	 	url: '/:breed',
+	 	templateUrl: 'views/breed.html',
+	 	controller: 'BreedCtrl',
+	 	reloadOnSearch: false
+	 })
   // .state('Categories', {
   //   url: '/search',
   //   templateUrl: 'views/categories.html',

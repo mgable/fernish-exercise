@@ -1,8 +1,24 @@
+.no-pad {
+  padding: 0 !important; }
+
 .testApp {
   background-color: white; }
   .testApp header {
     margin: 56px 0 0 0; }
-  .testApp .carousel-item {
+  .testApp .container .main .no-bullets {
+    padding-left: 0;
+    padding-right: 20px;
+    margin-right: 20px; }
+    .testApp .container .main .no-bullets li:first-child {
+      list-style-type: none;
+      margin: 0;
+      padding: 0; }
+  .testApp .container .main .breed-listing {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 500px; }
+  .testApp .slick .carousel-item {
     height: 65vh;
     min-height: 300px;
     background: no-repeat center center scroll;
@@ -10,9 +26,11 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover; }
-  .testApp .slick-prev {
+  .testApp .slick .slick-prev {
     left: 0; }
-  .testApp .slick-next {
+  .testApp .slick .slick-next {
     right: 0; }
+  .testApp .slick .slick-slider {
+    margin-bottom: 0; }
 
 /*# sourceMappingURL=main.css.map */
