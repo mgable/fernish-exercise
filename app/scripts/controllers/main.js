@@ -9,7 +9,7 @@
  */
  console.info("loaded main.js");
 angular.module('testApp')
-.controller('MainCtrl', ["$scope", "Search", "BreedList", "$stateParams", "CONFIG", "RandomImage", function ($scope, Search, BreedList, $stateParams, CONFIG, RandomImage) {
+.controller('MainCtrl', ["$scope", "Search", "BreedList", "$stateParams", "CONFIG", "RandomImages", function ($scope, Search, BreedList, $stateParams, CONFIG, RandomImages) {
 
 	init();
 
@@ -17,7 +17,7 @@ angular.module('testApp')
 
 	function init(){
 		console.info("I have inited!");
-		$scope.randomDogImage = RandomImage;
+		$scope.randomDogImages = RandomImages;
 		$scope.breeds = BreedList;
 
 		Search.getRandomImages(3).then(function(response){

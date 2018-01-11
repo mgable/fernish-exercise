@@ -26,7 +26,7 @@
  		controller: 'MainCtrl',
  		reloadOnSearch: false,
  		resolve: {
- 			"RandomImage": function(Search){ return Search.getRandomImage();},
+ 			"RandomImages": function(Search){ return Search.getRandomImages(10);},
  			"BreedList": function(Search){ return Search.getBreeds();},
  		}
  	})
