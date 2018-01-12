@@ -4,11 +4,7 @@
 .testApp {
   background-color: white; }
   .testApp header {
-    margin: 56px 0 0 0;
-    min-height: 450px; }
-    @media (max-width: 640px) {
-      .testApp header {
-        min-height: 460px; } }
+    margin: 56px 0 20px 0; }
   .testApp .container .main .search {
     border-color: lightgray; }
   .testApp .container .main .no-bullets {
