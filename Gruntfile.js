@@ -440,6 +440,11 @@ module.exports = function (grunt) {
     'karma'
   ]);
 
+   grunt.registerTask('lint', [
+    'newer:jshint'
+  ]);
+
+
   grunt.registerTask('build', [
     'clean:dist',
     'wiredep',

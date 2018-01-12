@@ -8,19 +8,17 @@
  * Controller of the testApp
  */
 
- console.info("loaded breed.js");
 angular.module('testApp')
-.controller('BreedCtrl', ["$scope", "Search", "$location", "$stateParams", "CONFIG", "$q", function ($scope, Search, $location, $stateParams, CONFIG, $q) {
+.controller('BreedCtrl', ["$scope", "$stateParams", function ($scope, $stateParams) {
 
-	init();
-
-	function init(){
-		console.info("I have Breed inited!");
+	function _init(){
 		console.info($stateParams);
 		// Search.getBreeds().then(function(response){
 		// 	console.info(response);
 		// })
 	}
+
+	_init();
 
 }]);
  

@@ -42,7 +42,7 @@
 	 	templateUrl: 'views/breed.html',
 	 	controller: 'BreedCtrl',
 	 	reloadOnSearch: false
-	 })
+	 });
   // .state('Categories', {
   //   url: '/search',
   //   templateUrl: 'views/categories.html',
@@ -74,4 +74,4 @@
 
   $locationProvider.html5Mode(true);
   $locationProvider.hashPrefix('!');
-})
+});
