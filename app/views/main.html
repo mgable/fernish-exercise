@@ -7,11 +7,7 @@
 	<div class="breed-listing">
 		<ul ng-repeat="(alpha, breeds) in alphaBreedsList" class="no-bullets">
 			<li><h2>{{alpha.toUpperCase()}}</h2></li>
-			<li ng-repeat="breed in breeds | filter : searchTerm"><a ng-click="setBreed(breed.name)">{{breed.name}}</a>
-				<ul ng-if="breed.subbreeds.length">
-					<li ng-repeat="subbreed in subbreeds">{{subbreed}}</li>
-				</ul>
-			</li>
+			<li ng-repeat="breed in breeds | filter : searchTerm"><a ng-click="setBreed(breed.name)">{{breed.name}}</a></li>
 		</ul>
 	</div>
 </div>
