@@ -32,14 +32,13 @@
 
  	function _http(endpoint, params){
  		return $http.get(domain + endpoint, {params:params}).then(function(response){
- 			return response.data
+ 			return response.data;
  		});
  	}
 
  	function getRandomImages(howMany){
 
- 		return new Promise(function(resolve, reject){
- 			_getImage(howMany, []);
+ 		return new Promise(function(resolve/*, reject*/){
 
 	 		function _getImage(howMany, promises){
 		 		if (howMany--){
@@ -51,6 +50,8 @@
 					});
 				}
 		 	}
+
+		 	_getImage(howMany, []);
 		});
  	}
 

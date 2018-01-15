@@ -1,3 +1,5 @@
+/* globals $ */
+
 'use strict';
 
 /**
@@ -10,8 +12,6 @@
 
 angular.module('testApp')
 .controller('SlickCtrl', ["$scope", "RandomImages", "Search", function ($scope, RandomImages, Search) {
-
-	_init();
 
 	function _init(){
 		$scope.randomDogImages = RandomImages;
@@ -42,5 +42,7 @@ angular.module('testApp')
 			slick.slick($scope.slickConfig);
 		});
 	}
+
+	_init();
 
 }]);
