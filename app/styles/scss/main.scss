@@ -62,14 +62,33 @@
 			-o-background-size: cover;
 			background-size: cover;
 		}
-
+		.slick-prev, .slick-next {
+			width: 30px;
+			height: 24px;
+			background: {
+				color: white;
+			}
+			opacity: 0.5;
+		}
 		.slick-prev {
-			left: 0;
+			left: 20px;
 			z-index: 10;
+			&:before {
+				font: {
+					size: 24px
+				}
+				color: black;
+			}
 		}
 
 		.slick-next {
-			right: 0;
+			right: 20px;
+			&:before {
+				font: {
+					size: 24px
+				}
+				color: black;
+			}
 		}
 		.slick-slider {
 			margin-bottom: 0;

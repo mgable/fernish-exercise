@@ -44,11 +44,22 @@
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover; }
+    .testApp .slick .slick-prev, .testApp .slick .slick-next {
+      width: 30px;
+      height: 24px;
+      background-color: white;
+      opacity: 0.5; }
     .testApp .slick .slick-prev {
-      left: 0;
+      left: 20px;
       z-index: 10; }
+      .testApp .slick .slick-prev:before {
+        font-size: 24px;
+        color: black; }
     .testApp .slick .slick-next {
-      right: 0; }
+      right: 20px; }
+      .testApp .slick .slick-next:before {
+        font-size: 24px;
+        color: black; }
     .testApp .slick .slick-slider {
       margin-bottom: 0; }
 

@@ -25,7 +25,7 @@
  	}
 
  	function getBreedImages(breed){
- 		return _http(`breed/${breed}/images`, {}).then(function(response){
+ 		return _http("breed/" + breed + "/images", {}).then(function(response){
  			return response.message;
  		});
  	}
