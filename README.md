@@ -1,4 +1,8 @@
-    Pick an API from https://github.com/toddmotto/public-apis
+This was an older Grunt based challenge.   
+   
+   
+   
+   Pick an API from https://github.com/toddmotto/public-apis
 
         Tip: APIs with No in the Auth column will allow you to make calls directly, and as such are recommended for use with this challenge.
 
